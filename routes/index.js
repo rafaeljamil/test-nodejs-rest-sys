@@ -1,7 +1,8 @@
-//Aqui serão configuradas todas as rotas acessadas pelo index
+//Preparando o ambiente
 const express = require('express')
 const router = express.Router()
 
+//Aqui serão configuradas todas as rotas acessadas pelo index
 router.get('/', (req,res) => {
     res.render("index")
 })

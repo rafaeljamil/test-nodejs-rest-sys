@@ -7,10 +7,8 @@
     <title>Home</title>
 </head>
 <body>
-    Antes
-    <br>
+    <%- include ('../partials/header.ejs') %>
+    <p style="color:red;"><%- include ('../partials/errorMessage.ejs') %></p>
     <%- body %> 
-    <br>
-    Depois
 </body>
 </html>
