@@ -1,6 +1,5 @@
 //Preparando o ambiente
 const express = require('express')
-const { route } = require('.')
 const router = express.Router()
 const Author = require('../models/author')
 

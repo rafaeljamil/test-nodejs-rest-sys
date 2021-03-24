@@ -1,4 +1,4 @@
-//Models são para o MongoDB o que tabelas são para o MySQL
+//Models são collections para o MongoDB, equivalente às tabelas do MySQL
 //Mongoose é a dependência que realiza os comandos no MongoDB
 const mongoose = require('mongoose')
 
