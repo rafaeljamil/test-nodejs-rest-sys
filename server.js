@@ -7,6 +7,7 @@ if(process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override') // O method override amplia os métodos de formulários do navegador de GET e POST pra GET, POST, PUT e DELETE
 
 //Criando a variável que usa o Express
 const app = express()
@@ -26,6 +27,7 @@ db.once('open', () => console.log("Conectado com Mongoose. Banco: sempas"))
 app.set('view engine', 'ejs') //Motor ejs renderiza as páginas do site
 app.set('views', __dirname + '/views') //Aponta pra onde estão as páginas
 app.set('layout', 'layouts/layout') 
+app.use(methodOverride('_method')) //O method override será usado ao incluir o parâmetro '_method' na action do form
 app.use(expressLayouts) //Diz ao servidor pra usar a a dependência de layouts
 app.use(express.static('public')) //Configura uma pasta estática pra usar CSS e outras coisas
 app.use(express.urlencoded({ extended: false }))
