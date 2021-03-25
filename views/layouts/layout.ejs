@@ -17,11 +17,18 @@
 
     <!-- Other Scripts -->
     <script defer src="/javascripts/fileUpload.js"></script>
+
+    <!-- Meu CSS -->
+    <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Minha Estante</title>
 </head>
 <body>
-    <%- include ('../partials/header.ejs') %>
-    <p style="color:red;"><%- include ('../partials/errorMessage.ejs') %></p>
-    <%- body %> 
+    <div class="container">
+        <%- include ('../partials/header.ejs') %>
+        <div class="inner-container">
+            <p style="color:red;"><%- include ('../partials/errorMessage.ejs') %></p>
+            <%- body %> 
+        </div>
+    </div>
 </body>
 </html>
