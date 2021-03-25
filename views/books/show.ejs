@@ -1,17 +1,21 @@
 <h2 class="page-header"><%= book.title %></h2>
-<img width="100" height="150" src="<%=book.coverImagePath%>" alt="Capa do livro">
-<div>
-    Autor: <%=book.author.name%>
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%=book.coverImagePath%>" alt="Capa do livro">
+        <div class="book-details-button-grid">
+            <a class="btn btn-primary" href="/books/<%=book.id%>/edit">Editar</a>
+            <%-include('../partials/deleteForm.ejs', {url: `/books/${book.id}`})%>
+            <a class="btn btn-primary book-details-author-button" href="/authors/<%=book.author.id%>">Ver autor</a>
+        </div>
+    </div>
+    <div class="book-details-grid">
+        <div class="book-details-label">Autor: </div>
+        <div><%=book.author.name%></div>
+        <div class="book-details-label">Data de publicação: </div>
+        <div><%=book.publishDate.toDateString()%></div>
+        <div class="book-details-label">Páginas: </div>
+        <div><%=book.pageCount%></div>
+        <div class="book-details-label">Descrição: </div>
+        <div><%=book.description%></div>
+    </div>
 </div>
-<div>
-    Data de publicação: <%=book.publishDate.toDateString()%>
-</div>
-<div>
-    Páginas: <%=book.pageCount%>
-</div>
-<div>
-    Descrição: <%=book.description%>
-</div>
-<a href="/books/<%=book.id%>/edit">Editar</a>
-<%-include('../partials/deleteForm.ejs', {url: `/books/${book.id}`})%>
-<a href="/authors/<%=book.author.id%>">Ver autor</a>
